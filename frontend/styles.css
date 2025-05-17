@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+.container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+#fileInput {
+  display: none;
+}
+.drag-drop {
+  border: 2px dashed #007bff;
+  border-radius: 5px;
+  padding: 20px;
+  color: #007bff;
+  cursor: pointer;
+}
+.drag-drop:hover {
+  background-color: #f1f1f1;
+}
+
+#submitBtn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#submitBtn:hover {
+  background-color: #0056b3;
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 1.2em;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Mensaje de éxito */
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensaje de error */
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preview-container {
+  display: none; /* Ocultar por defecto */
+  margin-top: 15px;
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa; /* Fondo claro */
+  padding: 10px;
+  text-align: center; /* Centrar contenido */
+}
+
+.preview-container img {
+  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  max-height: 300px; /* Define una altura máxima para evitar imágenes muy grandes */
+  object-fit: cover; /* Recorta la imagen manteniendo el aspecto */
+  border-radius: 5px;
+}

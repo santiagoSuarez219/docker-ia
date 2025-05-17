@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clasificador</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Clasificador de Frutas y Verduras</h1>
+      <form id="upload-form">
+        <div class="drag-drop" id="dropZone">
+          <p>haz clic para seleccionar una imagen</p>
+          <input type="file" id="fileInput" name="file" accept="image/*" />
+        </div>
+        <div class="preview-container">
+          <img id="preview" alt="Previsualización de la imagen seleccionada" />
+        </div>
+        <button type="submit" id="submitBtn">Clasificar Imagen</button>
+      </form>
+      <div id="response"></div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
