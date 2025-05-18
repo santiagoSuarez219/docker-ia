@@ -203,7 +203,6 @@ docker-compose down
 
 Al igual que en el caso anterior, si la interfaz de usuario no se muestra, prueba cambiando el puerto de conexión:
 
-```bash
 ```yaml
 version: '3.3'
 services:
