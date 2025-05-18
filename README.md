@@ -131,7 +131,15 @@ EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
 ```
-Luego, desde la terminal y ubicado en la carpeta `frontend/` se construye la imagen de Docker utilizando el siguiente comando:
+
+#### Para Windows
+Ejecutar el siguiente comando antes de construir la imagen:
+
+```bash
+docker pull nginx:alpine # Solo necesario en Windows
+```
+
+Esto es necesario para descargar la imagen base de Nginx, que se utilizará para servir la interfaz de usuario. Luego, desde la terminal y ubicado en la carpeta `frontend/` se construye la imagen de Docker utilizando el siguiente comando:
 
 ```bash
 docker build -t frontend . 
@@ -143,6 +151,16 @@ docker run -d -p 80:80 frontend
 ```
 
 Esto ejecutará la interfaz de usuario en el puerto 80 del host, permitiendo acceder a ella a través de `http://localhost/`.
+
+**Importante**
+Si el comando anterior no muestra la interfaz de usuario, prueba cambiando el puerto de conexión:
+
+```bash
+docker run -d -p 3000:80 frontend
+```
+
+Esto ejecutará la interfaz de usuario en el puerto 3000 del host, permitiendo acceder a ella a través de `http://localhost:3000/`.
+
 
 ## Docker Compose
 Docker Compose es una herramienta que permite definir y ejecutar aplicaciones Docker de múltiples contenedores. Con Docker Compose, puedes usar un archivo YAML para configurar los servicios de tu aplicación, redes y volúmenes, lo que facilita la gestión de aplicaciones complejas.
@@ -170,7 +188,8 @@ services:
     container_name: frontend
     ports:
       - "80:80"
-   ```
+```
+
 
 ### Comandos básicos de Docker Compose
 - **Construir y ejecutar los servicios en segundo plano**:
@@ -181,4 +200,25 @@ docker-compose up -d --build
 ```bash
 docker-compose down
 ```
+
+Al igual que en el caso anterior, si la interfaz de usuario no se muestra, prueba cambiando el puerto de conexión:
+
+```bash
+```yaml
+version: '3.3'
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "3000:80"
+```
+
+
 
